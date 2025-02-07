@@ -12,20 +12,19 @@ int main(){
 
     //entrada do usuário para cadastro de cartas
     printf("Digite o nome da cidade: \n"); 
-    scanf("%[^\n]", &nomedacidade);
+    scanf("%[^\n]", &nomedacidade); //armazenando as variaveis do nome da cidade
 
     printf("Digite o codigo da carta: \n");
-    scanf( "%s" , &codigodacarta);  //armazenado nas variaveis
+    scanf( "%s" , &codigodacarta);  //armazenando as variaveis de codigo da carta
 
     printf("Digite o número do PIB da cidade: \n");
-    scanf("%f", &pib);  //armazenado nas variaveis
+    scanf("%f", &pib);  //armazenando as variaveis de PIB
 
     printf("Digite a população da cidade: \n");
-    scanf("%f", &populacao);  //armazenado nas variaveis
-
+    scanf("%f", &populacao);  //armazenando as variaveis de população 
 
     printf("Digite o números de pontos turísticos: \n");
-    scanf("%d", &Numeropontosturisticos);  //armazenado nas variaveis
+    scanf("%d", &Numeropontosturisticos);  //armazenando as variaveis de pontos turísticos
 
     //impressão dos dados cadastrados pelo usuário
     printf("Nome da cidade: %s\n" , nomedacidade);
