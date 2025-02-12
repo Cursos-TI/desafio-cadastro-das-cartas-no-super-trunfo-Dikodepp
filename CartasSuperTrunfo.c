@@ -5,7 +5,7 @@ int main(){
     //declarando o nome das variaveis
     char estado;
     char nomedacidade[100];
-    char codigodacarta[6];
+    char codigodacarta[100];
     int populacao;
     int Numeropontosturisticos;
     float pib;
