@@ -5,9 +5,9 @@ int main(){
     //declarando as variaveis
     char pais[10] = "Brasil";
     char pais2[10] = "Brasil";
-    char estado1 , estado2;
-    char codigodacarta[10] , codigodacarta2[10];
-    char nomedacidade[100] , nomedacidade2[100];
+    char estado1 = 'A' , estado2 = 'B';
+    char codigodacarta[10] = "A01" , codigodacarta2[10] = "B02";
+    char nomedacidade[100] = "São Paulo" , nomedacidade2[100] = "Rio de janeiro";
     int populacao1 = 12325000 , populacao2 = 6748000;
     int pontosturisticos1 = 50, pontosturisticos2 = 30;
     int bilhoes = 1000000000;
@@ -46,18 +46,18 @@ int main(){
 
 
     printf("***** Bem Vindo ao Jogo Super Trunfo *****\n");
+    printf("1. Ver Regras!\n");
+    printf("2. Cadastro de cartas!\n");
+    printf("3. Exibir cartas cadastradas!\n");
+    printf("4. Comparação de Cartas\n");
     printf("Escolha uma opção: \n");
-    printf("1 . Ver Regras!\n");
-    printf("2 . Cadastro de cartas!\n");
-    printf("3 . Exibir cartas cadastradas!\n");
-    printf("4 . Comparação de Cartas\n");
-    scanf("Escolha:%d", &opcao);
+    scanf("%d", &opcao);
 
 
     switch (opcao){
     case 1:
         printf("O jogo Super trunfo consiste em comparar as cartas, as cartas com maiores valores vencem apenas em Densidade populacional que ganha quem obtiver menor valor!!!\n");
-        break;
+    break;
 
     case 2:
         //entrada do usuário para cadastro de carta 1
@@ -65,8 +65,7 @@ int main(){
         printf("CADASTRO DA CARTA 1 \n");
 
         printf("Digite o Pais: \n");
-        scanf("%[^\n]", pais);
-        getchar(); //limpeza de buffer
+        scanf("%s", pais);
 
         printf("Digite uma letra de A a H que corresponde ao estado da carta 1: \n");
         scanf(" %c", &estado1);
@@ -99,7 +98,6 @@ int main(){
 
         printf("Digite o Pais: \n");
         scanf("%[^\n]", pais2);
-        getchar(); //limpeza de buffer
 
         printf("Digite uma letra de A a H que corresponde ao estado da carta 2: \n");
         scanf(" %c", &estado2);
@@ -125,11 +123,12 @@ int main(){
  
         printf("Digite o números de pontos turísticos: \n");
         scanf("%d", &pontosturisticos2);  //armazenado nas variaveis
-        break;
+    break;
+    
     case 3:
         //impressão dos dados cadastrados pelo usuário carta 1
         printf("CARTA 1\n");
-        printf("Pais: %s", pais);
+        printf("Pais: %s\n", pais);
         printf("Estado: %c\n", estado1);
         printf("Código: %s\n" , codigodacarta);
         printf("Nome da cidade: %s\n" , nomedacidade);
@@ -145,7 +144,7 @@ int main(){
 
         //impressão dos dados cadastrados pelo usuário carta2
         printf("CARTA 2\n");
-        printf("Pais: %s", pais2);
+        printf("Pais: %s\n", pais2);
         printf("Estado: %c\n", estado2);
         printf("Código: %s\n" , codigodacarta2);
         printf("Nome da cidade: %s\n" , nomedacidade2);
@@ -159,7 +158,7 @@ int main(){
 
         printf("\n");
 
-        break;
+    break;
     case 4:
         printf("Selecione o atributo a ser comparado: \n");
         printf("1. População\n");
@@ -169,7 +168,7 @@ int main(){
         printf("5. Pib Percapita\n");
         printf("6. Número de pontos turísticos\n");
         printf("Escolha uma opção: \n");
-        scanf("Escolha:%d", &opcaoComparacao);
+        scanf("%d", &opcaoComparacao);
 
         switch (opcaoComparacao){
         case 1:
@@ -178,24 +177,24 @@ int main(){
             printf("\n");
    
             // exibe o valor a ser comparado de cada atributo
-            printf("Pais: %s", pais);
+            printf("Pais: %s\n", pais);
             printf("Carta 1 - São Paulo (SP): %d\n" , populacao1); 
             printf("Carta 2 - Rio de Janeiro (RJ): %d\n" , populacao2);
         
             if (populacao1 > populacao2){ //compara o atributo população
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1 (São Paulo) venceu!\n");
 
             }else if (populacao1 < populacao2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2 (Rio de janeiro) venceu!\n");
 
             } else {
                         
                 printf("Houve um empate!\n");
 
             }
-            break;
+        break;
 
         case 2:
             printf("Comparação de cartas (Atributo: extensão da cidade):\n");
@@ -209,18 +208,18 @@ int main(){
             
             if ( areadacidade1 > areadacidade2){ // compara o atributo da extensão da cidade
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1 (São Paulo) venceu!\n");
                 
             } else if (areadacidade1 < areadacidade2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2  (Rio de janeiro) venceu!\n");
 
             }else {
 
                 printf("Houve um empate!!!\n");
                 
             }
-            break;
+        break;
 
         case 3:
             printf("Comparação de cartas (Atributo: PIB):\n");
@@ -234,18 +233,18 @@ int main(){
             
             if (pib1 > pib2){ //compara o atributo população
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1  (São Paulo) venceu!\n");
 
             }else if (pib1 < pib2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2  (Rio de janeiro) venceu!\n");
 
             } else {
                     
                 printf("Houve um empate!\n");
 
             }
-            break;
+        break;
 
         case 4:
 
@@ -261,18 +260,18 @@ int main(){
         
             if (densidade_populacional1 < densidade_populacional2){ //compara o atributo população
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1  (São Paulo) venceu!\n");
 
             }else if (densidade_populacional1 > densidade_populacional2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2  (Rio de janeiro) venceu!\n");
 
             } else {
              
                 printf("Houve um empate!\n");
 
              }
-            break;
+        break;
 
         case 5:
 
@@ -280,60 +279,60 @@ int main(){
     
             printf("\n");
             // exibe o valor a ser comparado de cada atributo
-            printf("Pais: %s", pais);
-            printf("Carta 1 - São Paulo Brasil(SP): %.2f\n" , pib_percapita1);
-            printf("Carta 2 - Rio de Janeiro Brasil (RJ): %.2f\n" , pib_percapita2);
+            printf("Pais: %s\n", pais);
+            printf("Carta 1 - São Paulo (SP): %.2f\n" , pib_percapita1);
+            printf("Carta 2 - Rio de Janeiro (RJ): %.2f\n" , pib_percapita2);
 
             printf("\n");
  
-            if (pib_percapita1 < pib_percapita2){ //compara o atributo população
+            if (pib_percapita1 > pib_percapita2){ //compara o atributo população
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1 (São Paulo) venceu!\n");
 
-            }else if (pib_percapita1 > pib_percapita2){
+            }else if (pib_percapita1 < pib_percapita2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2 (Rio de janeiro) venceu!\n");
 
             } else {
              
                 printf("Houve um empate!\n");
 
             }
-            break;
+        break;
 
         case 6:
             printf("Comparação de cartas (Atributo: Pontos turisticos):\n");
         
             printf("\n");
             // exibe o valor a ser comparado de cada atributo
-            printf("Pais: %s", pais);
+            printf("Pais: %s\n", pais);
             printf("Carta 1 - São Paulo (SP): %d\n" , pontosturisticos1);
             printf("Carta 2 - Rio de Janeiro (RJ): %d\n" , pontosturisticos2);
     
             if (pontosturisticos1 > pontosturisticos2){ //compara o atributo população
 
-                printf("Resultado: Carta 1 Brasil (São Paulo) venceu!\n");
+                printf("Resultado: Carta 1  (São Paulo) venceu!\n");
 
             }else if (pontosturisticos1 < pontosturisticos2){
 
-                printf("Resultado: Carta 2 Brasil (Rio de janeiro) venceu!\n");
+                printf("Resultado: Carta 2 (Rio de janeiro) venceu!\n");
 
             } else {
                     
                 printf("Houve um empate!\n");
 
             }
-            break;
+        break;
        
         default:
             printf("opção invalida!!!");
-            break;
+        break;
         }
     break;
 
     default:
         printf("opção invalida!!!");
-        break;
+    break;
     }
 
         
